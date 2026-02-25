@@ -1,0 +1,28 @@
+name: takeABreak
+options:
+  bundleIdPrefix: com.takeabreak
+  deploymentTarget:
+    macOS: "14.0"
+  xcodeVersion: "15.0"
+  generateEmptyDirectories: false
+
+targets:
+  takeABreak:
+    type: application
+    platform: macOS
+    sources:
+      - takeABreak
+    info:
+      path: takeABreak/Info.plist
+    settings:
+      base:
+        PRODUCT_NAME: Take a Break
+        PRODUCT_BUNDLE_IDENTIFIER: com.takeabreak.app
+        MACOSX_DEPLOYMENT_TARGET: "14.0"
+        SWIFT_VERSION: "5.0"
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        COMBINE_HIDPI_IMAGES: "YES"
+        INFOPLIST_FILE: takeABreak/Info.plist
+        GENERATE_INFOPLIST_FILE: "NO"
+        CODE_SIGN_IDENTITY: "-"
+        CODE_SIGNING_REQUIRED: "NO"
