@@ -10,6 +10,22 @@ enum BreakType: String {
 class BreakManager: ObservableObject {
     // MARK: - Published State
     @Published var isRunning = false
+
+    // MARK: - Auto-start
+    var autoStartEnabled: Bool {
+        get { UserDefaults.standard.object(forKey: "autoStartEnabled") as? Bool ?? true }
+        set { UserDefaults.standard.set(newValue, forKey: "autoStartEnabled") }
+    }
+
+    init() {
+        if autoStartEnabled {
+            // Defer so published properties are ready
+            DispatchQueue.main.async { [weak self] in
+                self?.start()
+            }
+        }
+    }
+
     @Published var isOnBreak = false
     @Published var currentBreakType: BreakType = .eye
     @Published var countdownRemaining: TimeInterval = 0

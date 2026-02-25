@@ -8,7 +8,7 @@ struct TakeABreakApp: App {
         MenuBarExtra {
             MenuBarContentView(breakManager: breakManager)
         } label: {
-            Label("Take a Break", systemImage: breakManager.isOnBreak ? "eyes" : "eye.fill")
+            Label("Take a Break", systemImage: breakManager.isOnBreak ? "leaf.fill" : "leaf")
         }
         .menuBarExtraStyle(.menu)
 

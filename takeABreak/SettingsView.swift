@@ -9,9 +9,17 @@ struct SettingsView: View {
     @AppStorage("stretchBreakDuration") private var stretchDuration: Double = 5 * 60
     @AppStorage("eyeBreakEnabled")      private var eyeEnabled: Bool = true
     @AppStorage("stretchBreakEnabled")  private var stretchEnabled: Bool = true
+    @AppStorage("autoStartEnabled")     private var autoStart: Bool = true
 
     var body: some View {
         Form {
+            // ── General ───────────────────────────────
+            Section {
+                Toggle("Start automatically on launch", isOn: $autoStart)
+            } header: {
+                Label("General", systemImage: "gear")
+            }
+
             // ── Eye Break ──────────────────────────────
             Section {
                 Toggle("Enable eye breaks", isOn: $eyeEnabled)
@@ -75,7 +83,7 @@ struct SettingsView: View {
             }
         }
         .formStyle(.grouped)
-        .frame(width: 420, height: 380)
+        .frame(width: 420, height: 450)
     }
 
     /// Converts a seconds-based binding into a minutes-based binding.
