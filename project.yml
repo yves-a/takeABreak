@@ -26,3 +26,20 @@ targets:
         GENERATE_INFOPLIST_FILE: "NO"
         CODE_SIGN_IDENTITY: "-"
         CODE_SIGNING_REQUIRED: "NO"
+
+  takeABreakTests:
+    type: bundle.unit-test
+    platform: macOS
+    sources:
+      - takeABreakTests
+    dependencies:
+      - target: takeABreak
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.takeabreak.tests
+        SWIFT_VERSION: "5.0"
+        CODE_SIGN_IDENTITY: "-"
+        CODE_SIGNING_REQUIRED: "NO"
+        GENERATE_INFOPLIST_FILE: "YES"
+        TEST_HOST: "$(BUILT_PRODUCTS_DIR)/Take a Break.app/Contents/MacOS/Take a Break"
+        BUNDLE_LOADER: "$(TEST_HOST)"

@@ -87,21 +87,16 @@ class BreakManager: ObservableObject {
         endBreak()
     }
 
-    /// Force-trigger a break immediately (for debug / testing).
-    func triggerDebugBreak(_ type: BreakType) {
-        guard isRunning, !isOnBreak else { return }
-        triggerBreak(type)
-    }
 
-    // MARK: - Timer Logic
-    private func startMainTimer() {
+    // MARK: - Internal (testable) Logic
+    internal func startMainTimer() {
         mainTimer?.invalidate()
         mainTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [weak self] _ in
             DispatchQueue.main.async { self?.tick() }
         }
     }
 
-    private func tick() {
+    internal func tick() {
         guard isRunning, !isOnBreak else { return }
         eyeBreakElapsed += 1
         stretchBreakElapsed += 1
@@ -114,7 +109,7 @@ class BreakManager: ObservableObject {
         }
     }
 
-    private func triggerBreak(_ type: BreakType) {
+    internal func triggerBreak(_ type: BreakType) {
         mainTimer?.invalidate()
         mainTimer = nil
 
@@ -138,7 +133,7 @@ class BreakManager: ObservableObject {
         }
     }
 
-    private func endBreak() {
+    internal func endBreak() {
         countdownTimer?.invalidate()
         countdownTimer = nil
         isOnBreak = false
@@ -163,7 +158,7 @@ class BreakManager: ObservableObject {
         return v > 0 ? v : d
     }
 
-    private func formatTime(_ seconds: TimeInterval) -> String {
+    internal func formatTime(_ seconds: TimeInterval) -> String {
         let m = Int(seconds) / 60
         let s = Int(seconds) % 60
         return String(format: "%d:%02d", m, s)

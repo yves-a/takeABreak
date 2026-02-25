@@ -39,10 +39,6 @@ struct MenuBarContentView: View {
                 Button("Skip Break") { breakManager.skipBreak() }
             } else {
                 Button("Pause") { breakManager.pause() }
-                Divider()
-                Text("Debug").font(.caption)
-                Button("Trigger Eye Break") { breakManager.triggerDebugBreak(.eye) }
-                Button("Trigger Stretch Break") { breakManager.triggerDebugBreak(.stretch) }
             }
         } else {
             Button("Start") { breakManager.start() }

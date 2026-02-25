@@ -13,16 +13,29 @@
 		4A0BD930156F7396B64F83B3 /* OverlayWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBE2FF1EC1A38362B8FE8F7 /* OverlayWindowController.swift */; };
 		6447EC5B9B87899837613AE2 /* TakeABreakApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECA16201D9A789F967070D9 /* TakeABreakApp.swift */; };
 		86CD411DC207F79C43589313 /* OverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A1AA4A9380A98CEED15E5C /* OverlayView.swift */; };
+		AED63599C3494C84FA400AE7 /* BreakManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1F580FBAEF7625BB7AF5E /* BreakManagerTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8786929095C7BF11E7373CCA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 45319D586E15AC32EE56FD1D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AE1F144BFAF75BFF803E014B;
+			remoteInfo = takeABreak;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		68E04422DFBFD93A4C636D18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		6C8E832ED02C393599F122FA /* takeABreakTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = takeABreakTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BBE2FF1EC1A38362B8FE8F7 /* OverlayWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayWindowController.swift; sourceTree = "<group>"; };
 		8A57502070D023401BF8383C /* takeABreak.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = takeABreak.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99F9C1E9773C7C07D68F0589 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ADC66C4E18E0CE058CC313D0 /* BreakManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakManager.swift; sourceTree = "<group>"; };
 		AECA16201D9A789F967070D9 /* TakeABreakApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakeABreakApp.swift; sourceTree = "<group>"; };
 		C79BB32C75384596A2AE271E /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		CEF1F580FBAEF7625BB7AF5E /* BreakManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakManagerTests.swift; sourceTree = "<group>"; };
 		D5A1AA4A9380A98CEED15E5C /* OverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -31,14 +44,24 @@
 			isa = PBXGroup;
 			children = (
 				FFF6C7BFE889154BD3187388 /* takeABreak */,
+				A60918B97E319147E07CDBCF /* takeABreakTests */,
 				C0267CEE8F1AC4F815ED4EF1 /* Products */,
 			);
+			sourceTree = "<group>";
+		};
+		A60918B97E319147E07CDBCF /* takeABreakTests */ = {
+			isa = PBXGroup;
+			children = (
+				CEF1F580FBAEF7625BB7AF5E /* BreakManagerTests.swift */,
+			);
+			path = takeABreakTests;
 			sourceTree = "<group>";
 		};
 		C0267CEE8F1AC4F815ED4EF1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				8A57502070D023401BF8383C /* takeABreak.app */,
+				6C8E832ED02C393599F122FA /* takeABreakTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -60,6 +83,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		68365EA9278D3CE689A418C7 /* takeABreakTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E189306EC3A74A40A365A7FF /* Build configuration list for PBXNativeTarget "takeABreakTests" */;
+			buildPhases = (
+				C29A5596414C8A3A16FA201C /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CDC605014E86B0087F311F10 /* PBXTargetDependency */,
+			);
+			name = takeABreakTests;
+			packageProductDependencies = (
+			);
+			productName = takeABreakTests;
+			productReference = 6C8E832ED02C393599F122FA /* takeABreakTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		AE1F144BFAF75BFF803E014B /* takeABreak */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8B917EF53C1E40598DD38ACD /* Build configuration list for PBXNativeTarget "takeABreak" */;
@@ -102,6 +143,7 @@
 			projectRoot = "";
 			targets = (
 				AE1F144BFAF75BFF803E014B /* takeABreak */,
+				68365EA9278D3CE689A418C7 /* takeABreakTests */,
 			);
 		};
 /* End PBXProject section */
@@ -130,7 +172,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C29A5596414C8A3A16FA201C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AED63599C3494C84FA400AE7 /* BreakManagerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CDC605014E86B0087F311F10 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AE1F144BFAF75BFF803E014B /* takeABreak */;
+			targetProxy = 8786929095C7BF11E7373CCA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		0E3881D7D266DB882793EBB6 /* Release */ = {
@@ -207,6 +265,26 @@
 				PRODUCT_NAME = "Take a Break";
 				SDKROOT = macosx;
 				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		429E842BA1758F1E4C687B59 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.takeabreak.tests;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Take a Break.app/Contents/MacOS/Take a Break";
 			};
 			name = Debug;
 		};
@@ -294,6 +372,26 @@
 			};
 			name = Debug;
 		};
+		D9EC7608B319185F03797949 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.takeabreak.tests;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Take a Break.app/Contents/MacOS/Take a Break";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -311,6 +409,15 @@
 			buildConfigurations = (
 				21CDC5C6AF09FADAEC594A7B /* Debug */,
 				4E28C25AF26A2B3FE10F9216 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		E189306EC3A74A40A365A7FF /* Build configuration list for PBXNativeTarget "takeABreakTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				429E842BA1758F1E4C687B59 /* Debug */,
+				D9EC7608B319185F03797949 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
