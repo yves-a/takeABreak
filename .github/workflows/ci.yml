@@ -1,0 +1,30 @@
+name: CI
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    name: Build & Test
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Select Xcode
+        run: sudo xcode-select -s /Applications/Xcode.app
+
+      - name: Build
+        run: |
+          xcodebuild -project takeABreak.xcodeproj \
+            -scheme takeABreak \
+            -configuration Debug \
+            -destination 'platform=macOS' \
+            build
+
+      - name: Run Tests
+        run: |
+          xcodebuild -project takeABreak.xcodeproj \
+            -scheme takeABreakTests \
+            -configuration Debug \
+            -destination 'platform=macOS' \
+            test
